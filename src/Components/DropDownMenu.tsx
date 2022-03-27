@@ -27,6 +27,7 @@ const DropDownButtonStyled = styled.button`
   justify-content: space-between;
   align-items: start;
   width: 100%;
+  user-select: none;
 `;
 
 const DropDownButton: FC<DropDownButtonProps> = ({

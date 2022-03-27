@@ -13,4 +13,5 @@ export const Button = styled.button`
     display: flex;
     align-items: start;
     width: 100%;
+    user-select: none;
 `;

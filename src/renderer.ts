@@ -27,5 +27,17 @@
  */
 
 import './index.css';
-
 import './App';
+
+window.addEventListener("app-close", () => {
+    (window as any).electron.send("app-close");
+});
+
+window.addEventListener("app-minimise", () => {
+    (window as any).electron.send("app-minimise");
+});
+
+window.addEventListener("app-maximise", () => {
+    (window as any).electron.send("app-maximise");
+});
+

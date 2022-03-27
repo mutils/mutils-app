@@ -11,7 +11,6 @@ const InnerPanel = styled.div`
   width: 100%;
   height: 100vh;
   background: rgba(255, 255, 255, 0.05);
-  margin-top: 10px;
   border-radius: 5px 0 0 0;
   padding: 10px;
 `;

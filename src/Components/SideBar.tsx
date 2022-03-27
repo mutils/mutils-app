@@ -20,6 +20,7 @@ const SideBarContainer = styled.nav`
   height: 100vh;
   background: ${({ theme }) => theme.background.primary};
   padding: 10px;
+  padding-top: 0;
 
   overflow-y: auto;
 
