@@ -69,6 +69,7 @@
     "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
     "@electron-forge/maker-zip": "^6.0.0-beta.63",
     "@electron-forge/plugin-webpack": "^6.0.0-beta.63",
+    "@types/js-yaml": "^4.0.5",
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
     "@types/styled-components": "^5.1.24",
@@ -90,6 +91,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
     "electron-squirrel-startup": "^1.0.0",
+    "js-yaml": "^4.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "styled-components": "^5.3.5"

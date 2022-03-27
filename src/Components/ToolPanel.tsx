@@ -13,6 +13,7 @@ const InnerPanel = styled.div`
   background: rgba(255, 255, 255, 0.05);
   border-radius: 5px 0 0 0;
   padding: 10px;
+  color: ${({ theme }) => theme.text.color.primary};
 `;
 
 export const ToolPanel: FC = ({ children }) => {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,6 +12,7 @@ import {
 import { Button } from "./Button";
 import { DropDownMenu } from "./DropDownMenu";
 import { SearchBar } from "./SearchBar";
+import { SelectedTool } from "../Views/SelectedTool";
 
 const SideBarContainer = styled.nav`
   display: flex;
@@ -29,32 +30,46 @@ const SideBarContainer = styled.nav`
   }
 `;
 
-export const SideBar = () => {
+interface SideBarProps {
+  onSelect: (selectedTool: SelectedTool) => void;
+}
+
+export const SideBar: FC<SideBarProps> = ({ onSelect }) => {
   return (
     <SideBarContainer>
       <SearchBar />
-      <Button>
+      <Button onClick={() => onSelect(SelectedTool.NONE)}>
         <FontAwesomeIcon icon={faToolbox} style={{ marginRight: "10px" }} /> All
         tools
       </Button>
       <hr />
       <DropDownMenu text="Converters" icon={faArrowsLeftRight}>
-        <Button>JSON &lt;&gt; YAML</Button>
-        <Button>Number Base</Button>
+        <Button onClick={() => onSelect(SelectedTool.JSONYAML)}>
+          JSON &lt;&gt; YAML
+        </Button>
+        <Button onClick={() => onSelect(SelectedTool.NUMBERBASE)}>
+          Number Base
+        </Button>
       </DropDownMenu>
       <DropDownMenu text="Encoders / Decoders" icon={faBarcode}>
-        <Button>HTML</Button>
-        <Button>URL</Button>
-        <Button>Base 64</Button>
-        <Button>JWT Decoder</Button>
+        <Button onClick={() => onSelect(SelectedTool.HTML)}>HTML</Button>
+        <Button onClick={() => onSelect(SelectedTool.URL)}>URL</Button>
+        <Button onClick={() => onSelect(SelectedTool.BASE64)}>Base 64</Button>
+        <Button onClick={() => onSelect(SelectedTool.JWTDECODER)}>
+          JWT Decoder
+        </Button>
       </DropDownMenu>
       <DropDownMenu text="Generators" icon={faXmarkCircle}>
-        <Button>Hash</Button>
-        <Button>UUID</Button>
+        <Button onClick={() => onSelect(SelectedTool.HASH)}>Hash</Button>
+        <Button onClick={() => onSelect(SelectedTool.UUID)}>UUID</Button>
       </DropDownMenu>
       <DropDownMenu text="Text" icon={faFont}>
-        <Button>Case Converter</Button>
-        <Button>Regex Tester</Button>
+        <Button onClick={() => onSelect(SelectedTool.CASECONVERTER)}>
+          Case Converter
+        </Button>
+        <Button onClick={() => onSelect(SelectedTool.REGEXTESTER)}>
+          Regex Tester
+        </Button>
       </DropDownMenu>
     </SideBarContainer>
   );
