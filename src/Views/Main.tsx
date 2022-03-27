@@ -10,7 +10,7 @@ import {
   CaseConverter,
   Hash,
   Html,
-  JsonToYaml,
+  JsonYaml,
   JwtDecoder,
   NumberBase,
   RegexTester,
@@ -54,7 +54,7 @@ const ToolSwitch: FC<ToolSwitchProps> = ({ selectedTool }) => {
     case SelectedTool.HTML:
       return <Html />;
     case SelectedTool.JSONYAML:
-      return <JsonToYaml />;
+      return <JsonYaml />;
     case SelectedTool.JWTDECODER:
       return <JwtDecoder />;
     case SelectedTool.NUMBERBASE:

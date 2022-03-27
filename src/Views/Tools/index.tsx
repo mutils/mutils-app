@@ -2,7 +2,7 @@ export { Base64 } from "./Base64";
 export { CaseConverter } from "./CaseConverter";
 export { Hash } from "./Hash";
 export { Html } from "./Html";
-export { JsonToYaml } from "./JsonToYaml";
+export { JsonYaml } from "./JsonYaml";
 export { JwtDecoder } from "./JwtDecoder";
 export { NumberBase } from "./NumberBase";
 export { RegexTester } from "./RegexTester";
