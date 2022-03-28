@@ -1,5 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import styled from "styled-components";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import YAML from "yaml";
 import { Button } from "../../Components/Button";
 
@@ -18,6 +20,26 @@ const TextArea = styled.textarea`
   font-size: 1rem;
   padding: 10px;
   border-radius: ${({ theme }) => theme.borderRadius};
+
+  :focus {
+    outline: none;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const Output = styled(SyntaxHighlighter)`
+  display: flex;
+  width: 100%;
+  background: ${({ theme }) => theme.button.primary};
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  margin: 0;
 
   :focus {
     outline: none;
@@ -60,8 +82,30 @@ export const JsonYaml = () => {
   );
 };
 
+const exampleJson = 
+`{
+  "string": "example",
+  "array": ["a", "b", "c"],
+  "object": {
+    "field1": 1,
+    "field2": 2
+  }
+}
+`;
+
+const exampleYaml = 
+`string: example
+array:
+  - a
+  - b
+  - c
+object:
+  field1: 1
+  field2: 2
+`;
+
 const JsonToYaml = () => {
-  const [json, setJson] = useState("");
+  const [json, setJson] = useState(exampleJson);
   const [yaml, setYaml] = useState("");
 
   useEffect(() => {
@@ -77,19 +121,21 @@ const JsonToYaml = () => {
         value={json}
         onChange={(ev) => setJson(ev.currentTarget.value)}
       />
-      <TextBox title="YAML" value={yaml} />
+      {/* <TextBox title="YAML" value={yaml} /> */}
+      <Output language="yaml" style={vs2015}>
+        {yaml}
+      </Output>
     </Container>
   );
 };
 
 const YamlToJson = () => {
   const [json, setJson] = useState("");
-  const [yaml, setYaml] = useState("");
+  const [yaml, setYaml] = useState(exampleYaml);
 
   useEffect(() => {
     try {
-      console.log(JSON.stringify(YAML.parse(yaml)));
-      setJson(JSON.stringify(YAML.parse(yaml)));
+      setJson(JSON.stringify(YAML.parse(yaml), null, 2));
     } catch (e) {}
   }, [yaml]);
 
@@ -100,7 +146,9 @@ const YamlToJson = () => {
         value={yaml}
         onChange={(ev) => setYaml(ev.currentTarget.value)}
       />
-      <TextBox title="JSON" value={json} />
+      <Output language="json" style={vs2015}>
+        {json}
+      </Output>
     </Container>
   );
 };
