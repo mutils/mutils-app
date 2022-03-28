@@ -4,6 +4,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import YAML from "yaml";
 import { Button } from "../../Components/Button";
+import ToolHeading from "../../Components/ToolHeading";
 
 const Container = styled.div`
   display: flex;
@@ -74,6 +75,7 @@ export const JsonYaml = () => {
 
   return (
     <>
+      <ToolHeading>JSON &lt;&gt; YAML</ToolHeading>
       {jsonToYaml ? <JsonToYaml /> : <YamlToJson />}
       <Button style={{ marginTop: "10px" }} onClick={() => toggle(!jsonToYaml)}>
         {jsonToYaml ? "JSON -> YAML" : "YAML -> JSON"}
@@ -82,8 +84,7 @@ export const JsonYaml = () => {
   );
 };
 
-const exampleJson = 
-`{
+const exampleJson = `{
   "string": "example",
   "array": ["a", "b", "c"],
   "object": {
@@ -93,8 +94,7 @@ const exampleJson =
 }
 `;
 
-const exampleYaml = 
-`string: example
+const exampleYaml = `string: example
 array:
   - a
   - b

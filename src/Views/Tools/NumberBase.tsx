@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import TextInput from "../../Components/TextInput";
 import { TextBoxWithCopyButton } from "../../Components/TextBoxWithCopyButton";
 import Select from "../../Components/Select";
+import ToolHeading from "../../Components/ToolHeading";
 
 export const NumberBase = () => {
   const [value, setValue] = useState("");
   const [mode, setMode] = useState(10);
   return (
     <div>
+        <ToolHeading>Number Base</ToolHeading>
       <div style={{ display: "flex" }}>
         <TextInput onChange={(ev) => setValue(ev.target.value)} />
         <Select onChange={(ev) => setMode(parseInt(ev.target.value))}>

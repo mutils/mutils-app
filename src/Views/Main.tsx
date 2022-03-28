@@ -78,7 +78,7 @@ export const Main = () => {
       <Container>
         <Header />
         <Layout>
-          <SideBar onSelect={setSelectedTool} />
+          <SideBar selectedTool={selectedTool} onSelect={setSelectedTool} />
           <ToolPanel>
             <ToolSwitch selectedTool={selectedTool} />
           </ToolPanel>
