@@ -9,6 +9,10 @@ const TextInput = styled.input`
   padding: 10px;
   margin-bottom: 10px;
   border-radius: ${({theme}) => theme.borderRadius};
+
+  :focus {
+    outline: none;
+  }
 `;
 
 export const SearchBar = () => {
