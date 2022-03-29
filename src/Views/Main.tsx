@@ -81,7 +81,7 @@ export const Main = () => {
           setShowMenu={setShowMenu}
           setSearchTerm={setSearchTerm}
         />
-        <Header setTheme={(themeName: string) => setTheme(themes[themeName])} />
+        <Header />
         {showMenu ? (
           <Menu setShowMenu={setShowMenu} />
         ) : (

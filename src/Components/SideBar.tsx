@@ -102,14 +102,6 @@ export const SideBar: FC<SideBarProps> = ({
   onSelect,
   searchTerm = "",
 }) => {
-  const [openAllDropDowns, setOpenAllDropDowns] = useState(false);
-
-  useEffect(() => {
-    if (searchTerm.length > 0) {
-      setOpenAllDropDowns(true);
-    }
-  }, [searchTerm]);
-
   return (
     <SideBarContainer>
       {Object.keys(sideBarItems).map((sectionKey) => {
@@ -122,7 +114,7 @@ export const SideBar: FC<SideBarProps> = ({
             initiallyOpen={
               Object.values(tools)
                 .map((v) => v.toolCode)
-                .includes(selectedTool) || openAllDropDowns
+                .includes(selectedTool) || searchTerm.length > 0
             }
           >
             {Object.keys(tools)

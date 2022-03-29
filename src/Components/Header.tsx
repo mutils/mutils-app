@@ -55,11 +55,9 @@ const HeaderStyled = styled.div`
   grid-area: right-header;
 `;
 
-interface Props {
-  setTheme: (themeName: string) => void;
-}
+interface Props {}
 
-export const Header: FC<Props> = ({ setTheme }) => {
+export const Header: FC<Props> = () => {
   return (
     <HeaderStyled>
       <DragableArea />
