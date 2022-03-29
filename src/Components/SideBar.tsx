@@ -29,6 +29,7 @@ const SideBarContainer = styled.nav`
 
 interface SideBarProps {
   selectedTool: SelectedTool;
+  searchTerm?: string;
   onSelect: (selectedTool: SelectedTool) => void;
 }
 
@@ -96,7 +97,11 @@ const sideBarItems: SideBarItems = {
   },
 };
 
-export const SideBar: FC<SideBarProps> = ({ selectedTool, onSelect }) => {
+export const SideBar: FC<SideBarProps> = ({
+  selectedTool,
+  onSelect,
+  searchTerm = "",
+}) => {
   return (
     <SideBarContainer>
       {Object.keys(sideBarItems).map((sectionKey) => {
@@ -106,22 +111,28 @@ export const SideBar: FC<SideBarProps> = ({ selectedTool, onSelect }) => {
             key={sectionKey}
             text={sectionKey}
             icon={icon}
-            initiallyOpen={Object.values(tools)
-              .map((v) => v.toolCode)
-              .includes(selectedTool)}
+            initiallyOpen={
+              Object.values(tools)
+                .map((v) => v.toolCode)
+                .includes(selectedTool) || searchTerm.length > 0
+            }
           >
-            {Object.keys(tools).map((toolKey) => {
-              const { toolCode } = tools[toolKey];
-              return (
-                <Button
-                  key={toolKey}
-                  onClick={() => onSelect(toolCode)}
-                  selected={selectedTool === toolCode}
-                >
-                  {toolKey}
-                </Button>
-              );
-            })}
+            {Object.keys(tools)
+              .filter((toolName) =>
+                toolName.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+              )
+              .map((toolKey) => {
+                const { toolCode } = tools[toolKey];
+                return (
+                  <Button
+                    key={toolKey}
+                    onClick={() => onSelect(toolCode)}
+                    selected={selectedTool === toolCode}
+                  >
+                    {toolKey}
+                  </Button>
+                );
+              })}
           </DropDownMenu>
         );
       })}

@@ -71,16 +71,25 @@ export const Main = () => {
     SelectedTool.NONE
   );
   const [showMenu, setShowMenu] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
     <ThemeProvider theme={theme}>
       <Container>
-        <LeftMenu showMenu={showMenu} setShowMenu={setShowMenu} />
+        <LeftMenu
+          showMenu={showMenu}
+          setShowMenu={setShowMenu}
+          setSearchTerm={setSearchTerm}
+        />
         <Header setTheme={(themeName: string) => setTheme(themes[themeName])} />
         {showMenu ? (
           <Menu setShowMenu={setShowMenu} />
         ) : (
-          <SideBar selectedTool={selectedTool} onSelect={setSelectedTool} />
+          <SideBar
+            selectedTool={selectedTool}
+            onSelect={setSelectedTool}
+            searchTerm={searchTerm}
+          />
         )}
         <ToolPanel>
           <ToolSwitch selectedTool={selectedTool} />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 
 const TextInput = styled.input`
@@ -19,6 +19,16 @@ const TextInput = styled.input`
   }
 `;
 
-export const SearchBar = () => {
-  return <TextInput type="text" placeholder="Search..." />;
+interface Props {
+  setSearchTerm: (term: string) => void;
+}
+
+export const SearchBar: FC<Props> = ({ setSearchTerm }) => {
+  return (
+    <TextInput
+      type="text"
+      placeholder="Search..."
+      onChange={(ev) => setSearchTerm(ev.target.value)}
+    />
+  );
 };

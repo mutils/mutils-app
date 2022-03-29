@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
@@ -63,6 +63,9 @@ export const DropDownMenu: FC<DropDownMenuProps> = ({
   initiallyOpen = false,
 }) => {
   const [open, setOpen] = useState(initiallyOpen);
+  useEffect(() => {
+    setOpen(initiallyOpen);
+  }, [initiallyOpen]);
   return (
     <div>
       <DropDownButton

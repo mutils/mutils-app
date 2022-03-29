@@ -21,9 +21,10 @@ const ButtonSection = styled.div`
 interface Props {
   showMenu: boolean;
   setShowMenu: (flag: boolean) => void;
+  setSearchTerm: (term: string) => void;
 }
 
-export const LeftMenu: FC<Props> = ({ showMenu, setShowMenu }) => {
+export const LeftMenu: FC<Props> = ({ showMenu, setShowMenu, setSearchTerm }) => {
   return (
     <>
       <Container>
@@ -31,7 +32,7 @@ export const LeftMenu: FC<Props> = ({ showMenu, setShowMenu }) => {
           <MenuButton onClick={() => setShowMenu(!showMenu)}>
             <FontAwesomeIcon icon={showMenu ? faClose : faBars} />
           </MenuButton>
-          <SearchBar />
+          <SearchBar setSearchTerm={setSearchTerm}/>
         </ButtonSection>
       </Container>
     </>
