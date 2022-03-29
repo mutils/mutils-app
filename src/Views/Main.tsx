@@ -66,7 +66,7 @@ const ToolSwitch: FC<ToolSwitchProps> = ({ selectedTool }) => {
 };
 
 export const Main = () => {
-  const [theme, setTheme] = useState<Theme>(themes["horizon"]);
+  const [theme, setTheme] = useState<string>("horizon");
   const [selectedTool, setSelectedTool] = useState<SelectedTool>(
     SelectedTool.NONE
   );
@@ -74,7 +74,7 @@ export const Main = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={themes[theme]}>
       <Container>
         <LeftMenu
           showMenu={showMenu}
@@ -83,7 +83,11 @@ export const Main = () => {
         />
         <Header />
         {showMenu ? (
-          <Menu setShowMenu={setShowMenu} />
+          <Menu
+            setShowMenu={setShowMenu}
+            selectedTheme={theme}
+            setTheme={setTheme}
+          />
         ) : (
           <SideBar
             selectedTool={selectedTool}
