@@ -1,8 +1,7 @@
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
-import { Menu } from "./Menu";
 import MenuButton from "./MenuButton";
 import { SearchBar } from "./SearchBar";
 
@@ -19,17 +18,22 @@ const ButtonSection = styled.div`
   align-items: center;
 `;
 
-export const LeftMenu = () => {
-  const [showMenu, setShowMenu] = useState<boolean>(false);
+interface Props {
+  showMenu: boolean;
+  setShowMenu: (flag: boolean) => void;
+}
+
+export const LeftMenu: FC<Props> = ({ showMenu, setShowMenu }) => {
   return (
-    <Container>
-      {showMenu && <Menu setShowMenu={setShowMenu} />}
-      <ButtonSection>
-        <MenuButton onClick={() => setShowMenu(true)}>
-          <FontAwesomeIcon icon={faBars} scale={2} />
-        </MenuButton>
-        <SearchBar />
-      </ButtonSection>
-    </Container>
+    <>
+      <Container>
+        <ButtonSection>
+          <MenuButton onClick={() => setShowMenu(!showMenu)}>
+            <FontAwesomeIcon icon={showMenu ? faClose : faBars} />
+          </MenuButton>
+          <SearchBar />
+        </ButtonSection>
+      </Container>
+    </>
   );
 };

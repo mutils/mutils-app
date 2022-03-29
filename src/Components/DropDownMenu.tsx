@@ -7,17 +7,22 @@ import styled from "styled-components";
 interface DropDownMenuProps {
   text: string;
   icon: IconDefinition;
+  initiallyOpen?: boolean;
 }
 
-type DropDownButtonProps = DropDownMenuProps & {
+interface DropDownButtonProps {
+  text: string;
+  icon: IconDefinition;
   open: boolean;
   onClick: () => void;
-};
+}
 
 const DropDownButtonStyled = styled.button`
-  border-radius: ${({theme}) => theme.borderRadius};
+  border-radius: ${({ theme }) => theme.borderRadius};
   background: ${({ theme }) => theme.button.primary};
+  background: none;
   color: ${({ theme }) => theme.text.color.primary};
+  color: white;
   padding: 10px;
   border: none;
   margin-bottom: 5px;
@@ -48,15 +53,16 @@ const DropDownButton: FC<DropDownButtonProps> = ({
 };
 
 const ChildContainer = styled.div`
-    padding-left: 25px;
+  padding-left: 25px;
 `;
 
 export const DropDownMenu: FC<DropDownMenuProps> = ({
   children,
   text,
   icon,
+  initiallyOpen = false,
 }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(initiallyOpen);
   return (
     <div>
       <DropDownButton

@@ -7,8 +7,9 @@ interface Props {
 export const Button = styled.button<Props>`
   border-radius: ${({ theme }) => theme.borderRadius};
   background: ${({ theme, selected }) =>
-    selected ? 'grey' : theme.button.primary};
+    selected ? "rgba(255, 255, 255, 0.1)" : "none"};
   color: ${({ theme }) => theme.text.color.primary};
+  color: white;
   padding: 10px;
   border: none;
   margin-bottom: 5px;
@@ -18,4 +19,8 @@ export const Button = styled.button<Props>`
   align-items: start;
   width: 100%;
   user-select: none;
+
+  :hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
 `;

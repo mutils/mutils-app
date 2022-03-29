@@ -21,6 +21,7 @@ import { SelectedTool } from "./SelectedTool";
 import { Theme } from "../Themes/Theme";
 import themes from "../Themes";
 import { LeftMenu } from "../Components/LeftMenu";
+import { Menu } from "../Components/Menu";
 
 const Container = styled.div`
   display: grid;
@@ -69,13 +70,18 @@ export const Main = () => {
   const [selectedTool, setSelectedTool] = useState<SelectedTool>(
     SelectedTool.NONE
   );
+  const [showMenu, setShowMenu] = useState(false);
 
   return (
     <ThemeProvider theme={theme}>
       <Container>
-        <LeftMenu />
+        <LeftMenu showMenu={showMenu} setShowMenu={setShowMenu} />
         <Header setTheme={(themeName: string) => setTheme(themes[themeName])} />
-        <SideBar selectedTool={selectedTool} onSelect={setSelectedTool} />
+        {showMenu ? (
+          <Menu setShowMenu={setShowMenu} />
+        ) : (
+          <SideBar selectedTool={selectedTool} onSelect={setSelectedTool} />
+        )}
         <ToolPanel>
           <ToolSwitch selectedTool={selectedTool} />
         </ToolPanel>

@@ -1,12 +1,11 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faToolbox,
   faArrowsLeftRight,
   faBarcode,
   faXmarkCircle,
   faFont,
+  IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { Button } from "./Button";
@@ -33,82 +32,99 @@ interface SideBarProps {
   onSelect: (selectedTool: SelectedTool) => void;
 }
 
+interface SideBarItems {
+  [key: string]: {
+    icon: IconDefinition;
+    tools: {
+      [key: string]: {
+        toolCode: SelectedTool;
+      };
+    };
+  };
+}
+
+const sideBarItems: SideBarItems = {
+  Converters: {
+    icon: faArrowsLeftRight,
+    tools: {
+      "JSON <> YAML": {
+        toolCode: SelectedTool.JSONYAML,
+      },
+      "Number Base": {
+        toolCode: SelectedTool.NUMBERBASE,
+      },
+    },
+  },
+  "Encoders / Decoders": {
+    icon: faBarcode,
+    tools: {
+      HTML: {
+        toolCode: SelectedTool.HTML,
+      },
+      URL: {
+        toolCode: SelectedTool.URL,
+      },
+      "Base 64": {
+        toolCode: SelectedTool.BASE64,
+      },
+      "JWT Decoder": {
+        toolCode: SelectedTool.JWTDECODER,
+      },
+    },
+  },
+  Generators: {
+    icon: faXmarkCircle,
+    tools: {
+      Hash: {
+        toolCode: SelectedTool.HASH,
+      },
+      UUID: {
+        toolCode: SelectedTool.UUID,
+      },
+    },
+  },
+  Text: {
+    icon: faFont,
+    tools: {
+      "Case Converter": {
+        toolCode: SelectedTool.CASECONVERTER,
+      },
+      "Regex Tester": {
+        toolCode: SelectedTool.REGEXTESTER,
+      },
+    },
+  },
+};
+
 export const SideBar: FC<SideBarProps> = ({ selectedTool, onSelect }) => {
   return (
     <SideBarContainer>
-      <Button onClick={() => onSelect(SelectedTool.NONE)}>
-        <FontAwesomeIcon icon={faToolbox} style={{ marginRight: "10px" }} /> All
-        tools
-      </Button>
-      <hr />
-      <DropDownMenu text="Converters" icon={faArrowsLeftRight}>
-        <Button
-          onClick={() => onSelect(SelectedTool.JSONYAML)}
-          selected={selectedTool == SelectedTool.JSONYAML}
-        >
-          JSON &lt;&gt; YAML
-        </Button>
-        <Button
-          onClick={() => onSelect(SelectedTool.NUMBERBASE)}
-          selected={selectedTool == SelectedTool.NUMBERBASE}
-        >
-          Number Base
-        </Button>
-      </DropDownMenu>
-      <DropDownMenu text="Encoders / Decoders" icon={faBarcode}>
-        <Button
-          onClick={() => onSelect(SelectedTool.HTML)}
-          selected={selectedTool == SelectedTool.HTML}
-        >
-          HTML
-        </Button>
-        <Button
-          onClick={() => onSelect(SelectedTool.URL)}
-          selected={selectedTool == SelectedTool.URL}
-        >
-          URL
-        </Button>
-        <Button
-          onClick={() => onSelect(SelectedTool.BASE64)}
-          selected={selectedTool == SelectedTool.BASE64}
-        >
-          Base 64
-        </Button>
-        <Button
-          onClick={() => onSelect(SelectedTool.JWTDECODER)}
-          selected={selectedTool == SelectedTool.JWTDECODER}
-        >
-          JWT Decoder
-        </Button>
-      </DropDownMenu>
-      <DropDownMenu text="Generators" icon={faXmarkCircle}>
-        <Button
-          onClick={() => onSelect(SelectedTool.HASH)}
-          selected={selectedTool == SelectedTool.HASH}
-        >
-          Hash
-        </Button>
-        <Button
-          onClick={() => onSelect(SelectedTool.UUID)}
-          selected={selectedTool == SelectedTool.UUID}
-        >
-          UUID
-        </Button>
-      </DropDownMenu>
-      <DropDownMenu text="Text" icon={faFont}>
-        <Button
-          onClick={() => onSelect(SelectedTool.CASECONVERTER)}
-          selected={selectedTool == SelectedTool.CASECONVERTER}
-        >
-          Case Converter
-        </Button>
-        <Button
-          onClick={() => onSelect(SelectedTool.REGEXTESTER)}
-          selected={selectedTool == SelectedTool.REGEXTESTER}
-        >
-          Regex Tester
-        </Button>
-      </DropDownMenu>
+      {Object.keys(sideBarItems).map((sectionKey) => {
+        const { icon, tools } = sideBarItems[sectionKey];
+        return (
+          <DropDownMenu
+            key={sectionKey}
+            text={sectionKey}
+            icon={icon}
+            initiallyOpen={Object.values(tools)
+              .map((v) => v.toolCode)
+              .includes(selectedTool)}
+          >
+            {Object.keys(tools).map((toolKey) => {
+              const { toolCode } = tools[toolKey];
+              return (
+                <Button
+                  key={toolKey}
+                  onClick={() => onSelect(toolCode)}
+                  selected={selectedTool === toolCode}
+                >
+                  {toolKey}
+                </Button>
+              );
+            })}
+          </DropDownMenu>
+        );
+      })}
     </SideBarContainer>
   );
 };

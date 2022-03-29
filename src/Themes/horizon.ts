@@ -13,7 +13,7 @@ const horizon: DefaultTheme = {
     button: {
         primary: '#111217',
     },
-    borderRadius: '0',
+    borderRadius: '5px',
 };
 
 export default horizon;

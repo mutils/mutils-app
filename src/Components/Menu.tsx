@@ -1,25 +1,22 @@
-import { faClose } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPalette } from "@fortawesome/free-solid-svg-icons";
 import React, { FC } from "react";
 import styled from "styled-components";
-import MenuButton from "./MenuButton";
+import { Button } from "./Button";
+import { DropDownMenu } from "./DropDownMenu";
 
 const MenuContainer = styled.div`
   background: ${({ theme }) => theme.background.primary};
   color: ${({ theme }) => theme.text.color.primary};
   display: flex;
   flex-direction: column;
-  position: absolute;
-  width: 200px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-  z-index: 999;
+  grid-area: side-bar;
 `;
 
 const MenuItems = styled.div`
   display: flex;
   flex-direction: column;
   grid-gap: 5px;
-  padding: 10px;
+  padding: 0 10px 10px 10px;
 `;
 
 interface Props {
@@ -29,12 +26,11 @@ interface Props {
 export const Menu: FC<Props> = ({ setShowMenu }) => {
   return (
     <MenuContainer>
-      <MenuButton onClick={() => setShowMenu(false)}>
-        <FontAwesomeIcon icon={faClose} />
-      </MenuButton>
       <MenuItems>
-        <div>Horizon</div>
-        <div>Light</div>
+        <DropDownMenu text="Themes" icon={faPalette}>
+          <Button>Horizon</Button>
+          <Button>Light</Button>
+        </DropDownMenu>
       </MenuItems>
     </MenuContainer>
   );
