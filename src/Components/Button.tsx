@@ -1,4 +1,4 @@
-import styled, { withTheme } from "styled-components";
+import styled from "styled-components";
 
 interface Props {
   selected?: boolean;
