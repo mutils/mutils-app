@@ -10,7 +10,7 @@ const OuterPanel = styled.div`
 const InnerPanel = styled.div`
   height: 100vh;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 5px 0 0 0;
+  border-radius: ${({theme}) => theme.borderRadius} 0 0 0;
   padding: 10px;
   color: ${({ theme }) => theme.text.color.primary};
 `;

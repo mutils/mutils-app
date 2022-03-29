@@ -5,30 +5,12 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import YAML from "yaml";
 import { Button } from "../../Components/Button";
 import ToolHeading from "../../Components/ToolHeading";
+import TextArea from "../../Components/TextArea";
 
 const Container = styled.div`
   display: flex;
   flex-direction: row;
   grid-gap: 20px;
-`;
-
-const TextArea = styled.textarea`
-  display: flex;
-  width: 100%;
-  background: ${({ theme }) => theme.button.primary};
-  border: none;
-  color: white;
-  font-size: 1rem;
-  padding: 10px;
-  border-radius: ${({ theme }) => theme.borderRadius};
-
-  :focus {
-    outline: none;
-  }
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
 `;
 
 const Output = styled(SyntaxHighlighter)`
