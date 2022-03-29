@@ -63,9 +63,13 @@ export const DropDownMenu: FC<DropDownMenuProps> = ({
   initiallyOpen = false,
 }) => {
   const [open, setOpen] = useState(initiallyOpen);
+
   useEffect(() => {
-    setOpen(initiallyOpen);
+    if (initiallyOpen) {
+      setOpen(true);
+    }
   }, [initiallyOpen]);
+
   return (
     <div>
       <DropDownButton
