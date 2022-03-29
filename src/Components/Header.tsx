@@ -1,11 +1,15 @@
-import React from "react";
+import React, { FC, useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faBars,
   faChevronDown,
   faChevronUp,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
+import { Menu } from "./Menu";
+import MenuButton from "./MenuButton";
+import { SearchBar } from "./SearchBar";
 
 const WindowButton = styled.button`
   border: none;
@@ -17,6 +21,7 @@ const WindowButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 const MinimiseButton = styled(WindowButton)`
@@ -33,21 +38,28 @@ const CloseButton = styled(WindowButton)``;
 
 const DragableArea = styled.div`
   width: 100%;
+
   -webkit-app-region: drag;
 `;
 
 const ButtonSection = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
 `;
 
 const HeaderStyled = styled.div`
   display: flex;
   background: ${({ theme }) => theme.background.primary};
   padding: 10px;
+  grid-area: right-header;
 `;
 
-export const Header = () => {
+interface Props {
+  setTheme: (themeName: string) => void;
+}
+
+export const Header: FC<Props> = ({ setTheme }) => {
   return (
     <HeaderStyled>
       <DragableArea />

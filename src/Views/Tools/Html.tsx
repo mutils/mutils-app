@@ -14,8 +14,6 @@ const Input = styled(TextArea)``;
 
 const Output = styled(TextArea)``;
 
-type Func = (text: string) => string;
-
 export const Html = () => {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");

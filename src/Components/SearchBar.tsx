@@ -2,19 +2,23 @@ import React from "react";
 import styled from "styled-components";
 
 const TextInput = styled.input`
-  border: none;
-  background: ${({ theme }) => theme.button.primary};
-  font-size: 1rem;
+  background: none;
   color: ${({ theme }) => theme.text.color.primary};
+  border-radius: ${({ theme }) => theme.borderRadius};
+  border: none;
+  font-size: 1rem;
   padding: 10px;
-  margin-bottom: 10px;
-  border-radius: ${({theme}) => theme.borderRadius};
+  width: 100px;
+  transition: all 0.2s linear;
 
   :focus {
     outline: none;
+    background: white;
+    color: black;
+    width: 100%;
   }
 `;
 
 export const SearchBar = () => {
-  return <TextInput type="text" placeholder="Search..."/>;
+  return <TextInput type="text" placeholder="Search..." />;
 };

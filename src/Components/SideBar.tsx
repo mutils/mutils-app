@@ -11,17 +11,15 @@ import {
 
 import { Button } from "./Button";
 import { DropDownMenu } from "./DropDownMenu";
-import { SearchBar } from "./SearchBar";
 import { SelectedTool } from "../Views/SelectedTool";
 
 const SideBarContainer = styled.nav`
+  background: ${({ theme }) => theme.background.primary};
   display: flex;
   flex-direction: column;
-  width: 350px;
-  height: 100vh;
-  background: ${({ theme }) => theme.background.primary};
   padding: 10px;
   padding-top: 0;
+  grid-area: side-bar;
 
   overflow-y: auto;
 
@@ -38,7 +36,6 @@ interface SideBarProps {
 export const SideBar: FC<SideBarProps> = ({ selectedTool, onSelect }) => {
   return (
     <SideBarContainer>
-      <SearchBar />
       <Button onClick={() => onSelect(SelectedTool.NONE)}>
         <FontAwesomeIcon icon={faToolbox} style={{ marginRight: "10px" }} /> All
         tools

@@ -4,7 +4,6 @@ import styled, { ThemeProvider } from "styled-components";
 import { SideBar } from "../Components/SideBar";
 import { ToolPanel } from "../Components/ToolPanel";
 import { Header } from "../Components/Header";
-import horizon from "../Themes/horizon";
 import {
   Base64,
   CaseConverter,
@@ -19,22 +18,19 @@ import {
 } from "./Tools";
 import { ToolsOverview } from "./ToolsOverview";
 import { SelectedTool } from "./SelectedTool";
-
-const Layout = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 100%;
-  position: relative;
-`;
+import { Theme } from "../Themes/Theme";
+import themes from "../Themes";
+import { LeftMenu } from "../Components/LeftMenu";
 
 const Container = styled.div`
-//   background: ${({ theme }) => theme.background.primary};
-//   border-radius: 10px;
-//   position: relative;
-//   width: 100%;
-//   height: 100%;
-//   overflow: hidden;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 58px 2.4fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "left-header right-header"
+    "side-bar tool-area";
+  height: 100vh;
 `;
 
 interface ToolSwitchProps {
@@ -69,20 +65,20 @@ const ToolSwitch: FC<ToolSwitchProps> = ({ selectedTool }) => {
 };
 
 export const Main = () => {
+  const [theme, setTheme] = useState<Theme>(themes["horizon"]);
   const [selectedTool, setSelectedTool] = useState<SelectedTool>(
     SelectedTool.NONE
   );
 
   return (
-    <ThemeProvider theme={horizon}>
+    <ThemeProvider theme={theme}>
       <Container>
-        <Header />
-        <Layout>
-          <SideBar selectedTool={selectedTool} onSelect={setSelectedTool} />
-          <ToolPanel>
-            <ToolSwitch selectedTool={selectedTool} />
-          </ToolPanel>
-        </Layout>
+        <LeftMenu />
+        <Header setTheme={(themeName: string) => setTheme(themes[themeName])} />
+        <SideBar selectedTool={selectedTool} onSelect={setSelectedTool} />
+        <ToolPanel>
+          <ToolSwitch selectedTool={selectedTool} />
+        </ToolPanel>
       </Container>
     </ThemeProvider>
   );
