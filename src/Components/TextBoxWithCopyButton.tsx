@@ -24,7 +24,7 @@ interface Props {
 export const TextBoxWithCopyButton: FC<Props> = ({ value }) => {
   return (
     <Container>
-      <TextInput type="text" value={value} />
+      <TextInput type="text" value={value} fullWidth />
       <CopyButton
         icon={faCopy}
         onClick={() => navigator.clipboard.writeText(value)}

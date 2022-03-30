@@ -9,7 +9,6 @@ export const Button = styled.button<Props>`
   background: ${({ theme, selected }) =>
     selected ? "rgba(255, 255, 255, 0.1)" : "none"};
   color: ${({ theme }) => theme.text.color.primary};
-  color: white;
   padding: 10px;
   border: none;
   margin-bottom: 5px;

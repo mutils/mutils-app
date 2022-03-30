@@ -1,13 +1,22 @@
 import styled from "styled-components";
 
-export default styled.input`
+interface Props {
+  fullWidth?: boolean;
+}
+
+export default styled.input<Props>`
   background: ${({ theme }) => theme.button.primary};
   color: white;
   border-radius: ${({ theme }) => theme.borderRadius};
   border: none;
   font-size: 1rem;
   padding: 10px;
-  width: 100%;
+
+  ${({ fullWidth }) => {
+    if (fullWidth) {
+      return `width: 100%;`;
+    }
+  }}
 
   :focus {
     outline: none;

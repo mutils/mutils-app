@@ -11,7 +11,7 @@ export const NumberBase = () => {
     <div>
         <ToolHeading>Number Base</ToolHeading>
       <div style={{ display: "flex" }}>
-        <TextInput onChange={(ev) => setValue(ev.target.value)} />
+        <TextInput onChange={(ev) => setValue(ev.target.value)} fullWidth />
         <Select onChange={(ev) => setMode(parseInt(ev.target.value))}>
           <option value="10">Decimal</option>
           <option value="16">Hexadecimal</option>
