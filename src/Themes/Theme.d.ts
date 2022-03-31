@@ -3,7 +3,12 @@ import 'styled-components';
 declare interface Theme {
     background: {
         primary: string,
+        secondary: string,
+        panel: string,
     },
+    border: {
+        panel: string;
+      },
     text: {
         color: {
             primary: string,
@@ -16,18 +21,5 @@ declare interface Theme {
 }
 
 declare module 'styled-components' {
-  export interface DefaultTheme {
-    background: {
-        primary: string,
-    },
-    text: {
-        color: {
-            primary: string,
-        }
-    },
-    button: {
-        primary: string,
-    },
-    borderRadius: string,
-  }
+  export interface DefaultTheme extends Theme {}
 }

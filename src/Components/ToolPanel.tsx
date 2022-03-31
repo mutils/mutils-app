@@ -10,10 +10,13 @@ const OuterPanel = styled.div`
 `;
 
 const InnerPanel = styled.div`
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: ${({ theme }) => theme.borderRadius} 0 0 0;
+  background: ${({ theme }) => theme.background.panel};
+  border-radius: ${({ theme }) => theme.borderRadius};
+  border: ${({ theme }) => theme.border.panel};
   padding: 10px;
   width: 100%;
+  margin-right: 10px;
+  margin-bottom: 10px;
   color: ${({ theme }) => theme.text.color.primary};
 `;
 

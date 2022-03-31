@@ -22,7 +22,6 @@ const DropDownButtonStyled = styled.button`
   background: ${({ theme }) => theme.button.primary};
   background: none;
   color: ${({ theme }) => theme.text.color.primary};
-  color: white;
   padding: 10px;
   border: none;
   margin-bottom: 5px;

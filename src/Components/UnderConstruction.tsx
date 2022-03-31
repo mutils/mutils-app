@@ -11,7 +11,7 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  color: ${({ theme }) => theme.background.primary};
+  color: ${({ theme }) => theme.background.secondary};
 `;
 
 const Paragraph = styled.p`

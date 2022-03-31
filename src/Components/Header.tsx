@@ -25,12 +25,12 @@ const WindowButton = styled.button`
 `;
 
 const MinimiseButton = styled(WindowButton)`
-  color: white;
+  color: ${({ theme }) => theme.text.color.primary};
   background: none;
 `;
 
 const FullscreenButton = styled(WindowButton)`
-  color: white;
+  color: ${({ theme }) => theme.text.color.primary};
   background: none;
 `;
 

@@ -18,7 +18,6 @@ import {
 } from "./Tools";
 import { ToolsOverview } from "./ToolsOverview";
 import { SelectedTool } from "./SelectedTool";
-import { Theme } from "../Themes/Theme";
 import themes from "../Themes";
 import { LeftMenu } from "../Components/LeftMenu";
 import { Menu } from "../Components/Menu";

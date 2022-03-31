@@ -9,4 +9,4 @@ interface Themes {
 export default {
     horizon: horizon,
     light: light,
-} as Themes;
+} as unknown as Themes;
