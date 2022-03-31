@@ -65,7 +65,7 @@ const ToolSwitch: FC<ToolSwitchProps> = ({ selectedTool }) => {
 };
 
 export const Main = () => {
-  const [theme, setTheme] = useState<string>("horizon");
+  const [theme, setTheme] = useState<string>("gruvbox");
   const [selectedTool, setSelectedTool] = useState<SelectedTool>(
     SelectedTool.NONE
   );

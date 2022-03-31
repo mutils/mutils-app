@@ -1,6 +1,5 @@
 import { faPalette } from "@fortawesome/free-solid-svg-icons";
 import React, { FC } from "react";
-import { Theme } from "../Themes/Theme";
 import themes from "../Themes";
 import styled from "styled-components";
 import { Button } from "./Button";

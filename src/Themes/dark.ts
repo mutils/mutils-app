@@ -1,8 +1,8 @@
 import { DefaultTheme } from "styled-components";
 
-const horizon: DefaultTheme = {
+const dark: DefaultTheme = {
   background: {
-    primary: "#1C1E26",
+    primary: "black",
     secondary: "grey",
     panel: "#1C1E26",
   },
@@ -11,7 +11,7 @@ const horizon: DefaultTheme = {
   },
   text: {
     color: {
-      primary: "white",
+      primary: "grey",
     },
   },
   button: {
@@ -20,13 +20,13 @@ const horizon: DefaultTheme = {
   borderRadius: "5px",
   windowButtons: {
     borderRadius: "999px",
-    showIcon: true,
+    showIcon: false,
     width: "20px",
     height: "20px",
-    minimiseColor: "transparent",
-    maximiseColor: "transparent",
-    closeColor: "#e95378",
+    minimiseColor: "white",
+    maximiseColor: "white",
+    closeColor: "white",
   },
 };
 
-export default horizon;
+export default dark;
