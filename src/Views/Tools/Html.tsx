@@ -28,11 +28,12 @@ export const Html = () => {
       <HtmlContainer>
         <Input
           rows={20}
+          fullWidth
           style={{ resize: "none" }}
           onChange={(ev) => setInput(ev.target.value)}
           value={input}
         />
-        <Output rows={20} style={{ resize: "none" }} value={output} />
+        <Output fullWidth rows={20} style={{ resize: "none" }} value={output} />
       </HtmlContainer>
       <br />
       <Button

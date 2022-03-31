@@ -44,6 +44,7 @@ const TextBox: FC<TextBoxProps> = ({ title, value, onChange }) => {
     <TextArea
       placeholder={title}
       style={{ resize: "none" }}
+      fullWidth
       rows={20}
       value={value}
       onChange={onChange}
