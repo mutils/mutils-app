@@ -1,5 +1,6 @@
-import React from 'react';
+import React from "react";
+import UnderConstruction from "../../Components/UnderConstruction";
 
 export const JwtDecoder = () => {
-    return <div>JwtDecoder</div>;
+  return <UnderConstruction />;
 };

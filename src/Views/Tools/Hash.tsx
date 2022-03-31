@@ -1,5 +1,6 @@
 import React from 'react';
+import UnderConstruction from "../../Components/UnderConstruction";
 
 export const Hash = () => {
-    return <div>Hash</div>;
+    return <UnderConstruction />;
 };

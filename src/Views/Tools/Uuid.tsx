@@ -1,5 +1,6 @@
-import React from 'react';
+import React from "react";
+import UnderConstruction from "../../Components/UnderConstruction";
 
 export const Uuid = () => {
-    return <div>Uuid</div>;
+  return <UnderConstruction />;
 };
