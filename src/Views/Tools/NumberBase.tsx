@@ -9,8 +9,8 @@ export const NumberBase = () => {
   const [mode, setMode] = useState(10);
   return (
     <div>
-        <ToolHeading>Number Base</ToolHeading>
-      <div style={{ display: "flex" }}>
+      <ToolHeading>Number Base</ToolHeading>
+      <div style={{ display: "flex", gridGap: "5px" }}>
         <TextInput onChange={(ev) => setValue(ev.target.value)} fullWidth />
         <Select onChange={(ev) => setMode(parseInt(ev.target.value))}>
           <option value="10">Decimal</option>

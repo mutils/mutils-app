@@ -7,7 +7,6 @@ export default styled.select`
   padding: 5px;
   border: none;
   font-size: 1rem;
-  margin-left: 5px;
 
   :focus {
     outline: none;

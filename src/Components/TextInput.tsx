@@ -6,7 +6,7 @@ interface Props {
 
 export default styled.input<Props>`
   background: ${({ theme }) => theme.button.primary};
-  color: white;
+  color: ${({ theme }) => theme.text.color.primary};
   border-radius: ${({ theme }) => theme.borderRadius};
   border: none;
   font-size: 1rem;

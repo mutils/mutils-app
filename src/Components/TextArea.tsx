@@ -5,13 +5,13 @@ interface Props {
 }
 
 export default styled.textarea<Props>`
-  display: flex;
   background: ${({ theme }) => theme.button.primary};
+  color: ${({ theme }) => theme.text.color.primary};
+  border-radius: ${({ theme }) => theme.borderRadius};
+  display: flex;
   border: none;
-  color: white;
   font-size: 1rem;
   padding: 10px;
-  border-radius: ${({ theme }) => theme.borderRadius};
 
   ${({ fullWidth }) => {
     if (fullWidth) {
