@@ -84,7 +84,6 @@ const JsonToYaml = () => {
         value={json}
         onChange={(ev) => setJson(ev.currentTarget.value)}
       />
-      {/* <TextBox title="YAML" value={yaml} /> */}
       <SyntaxHighlighter language="yaml" style={vs2015} fullWidth>
         {yaml}
       </SyntaxHighlighter>
