@@ -7,26 +7,21 @@ import {
   faChevronUp,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import { Menu } from "./Menu";
-import MenuButton from "./MenuButton";
-import { SearchBar } from "./SearchBar";
 
 const WindowButton = styled.button`
   ${({
     theme: {
-      windowButtons: { borderRadius, width, height },
+      windowButtons: { borderRadius, width, height, spacing },
     },
   }) => `
     border-radius: ${borderRadius};
     width: ${width};
     height: ${height};
+    margin: ${spacing};
   `}
   border: none;
   background: #e95378;
   border-radius: 999px;
-  width: 20px;
-  height: 20px;
-  margin: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,11 +35,11 @@ const MinimiseButton = styled(WindowButton)`
 
 const FullscreenButton = styled(WindowButton)`
   color: ${({ theme }) => theme.text.color.primary};
-  background: ${({ theme }) => theme.windowButtons.maximiseColor}
+  background: ${({ theme }) => theme.windowButtons.maximiseColor};
 `;
 
 const CloseButton = styled(WindowButton)`
-  background: ${({ theme }) => theme.windowButtons.closeColor}
+  background: ${({ theme }) => theme.windowButtons.closeColor};
 `;
 
 const DragableArea = styled.div`

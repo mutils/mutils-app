@@ -26,6 +26,7 @@ declare interface Theme {
     minimiseColor: string;
     maximiseColor: string;
     closeColor: string;
+    spacing: string;
   };
 }
 

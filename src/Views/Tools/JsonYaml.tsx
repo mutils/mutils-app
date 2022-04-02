@@ -1,36 +1,16 @@
 import React, { FC, useEffect, useState } from "react";
 import styled from "styled-components";
-import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import YAML from "yaml";
 import { Button } from "../../Components/Button";
 import ToolHeading from "../../Components/ToolHeading";
 import TextArea from "../../Components/TextArea";
+import SyntaxHighlighter from "../../Components/SyntaxHighlighter";
 
 const Container = styled.div`
   display: flex;
   flex-direction: row;
   grid-gap: 20px;
-`;
-
-const Output = styled(SyntaxHighlighter)`
-  display: flex;
-  width: 100%;
-  background: ${({ theme }) => theme.button.primary};
-  border: none;
-  color: white;
-  font-size: 1rem;
-  padding: 10px;
-  border-radius: ${({ theme }) => theme.borderRadius};
-  margin: 0;
-
-  :focus {
-    outline: none;
-  }
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
 `;
 
 interface TextBoxProps {
@@ -105,9 +85,9 @@ const JsonToYaml = () => {
         onChange={(ev) => setJson(ev.currentTarget.value)}
       />
       {/* <TextBox title="YAML" value={yaml} /> */}
-      <Output language="yaml" style={vs2015}>
+      <SyntaxHighlighter language="yaml" style={vs2015} fullWidth>
         {yaml}
-      </Output>
+      </SyntaxHighlighter>
     </Container>
   );
 };
@@ -129,9 +109,9 @@ const YamlToJson = () => {
         value={yaml}
         onChange={(ev) => setYaml(ev.currentTarget.value)}
       />
-      <Output language="json" style={vs2015}>
+      <SyntaxHighlighter language="json" style={vs2015} fullWidth>
         {json}
-      </Output>
+      </SyntaxHighlighter>
     </Container>
   );
 };

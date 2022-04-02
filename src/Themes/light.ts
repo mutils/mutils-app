@@ -26,6 +26,7 @@ const light: DefaultTheme = {
     minimiseColor: "white",
     maximiseColor: "white",
     closeColor: "white",
+    spacing: "2px",
   },
 };
 

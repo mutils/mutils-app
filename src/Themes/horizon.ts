@@ -26,6 +26,7 @@ const horizon: DefaultTheme = {
     minimiseColor: "transparent",
     maximiseColor: "transparent",
     closeColor: "#e95378",
+    spacing: "2px",
   },
 };
 

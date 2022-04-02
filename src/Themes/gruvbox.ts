@@ -21,11 +21,12 @@ const gruvbox: DefaultTheme = {
   windowButtons: {
     borderRadius: "999px",
     showIcon: false,
-    width: "10px",
-    height: "10px",
+    width: "15px",
+    height: "15px",
     minimiseColor: "#C18F41",
     maximiseColor: "#8F9A52",
     closeColor: "#B85651",
+    spacing: "5px",
   },
 };
 
