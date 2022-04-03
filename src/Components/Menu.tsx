@@ -2,8 +2,8 @@ import { faPalette } from "@fortawesome/free-solid-svg-icons";
 import React, { FC } from "react";
 import themes from "../Themes";
 import styled from "styled-components";
-import { Button } from "./Button";
-import { DropDownMenu } from "./DropDownMenu";
+import { Button } from "Components/Atoms";
+import { DropDownMenu } from ".";
 
 const MenuContainer = styled.div`
   background: ${({ theme }) => theme.background.primary};
@@ -26,11 +26,11 @@ interface Props {
   setTheme: (themeName: string) => void;
 }
 
-export const Menu: FC<Props> = ({ selectedTheme, setShowMenu, setTheme }) => {
+const Menu: FC<Props> = ({ selectedTheme, setShowMenu, setTheme }) => {
   return (
     <MenuContainer>
       <MenuItems>
-        <DropDownMenu text="Themes" icon={faPalette}>
+        <DropDownMenu text="Themes (experimental)" icon={faPalette}>
           {Object.keys(themes).map((theme) => {
             return (
               <Button
@@ -46,3 +46,5 @@ export const Menu: FC<Props> = ({ selectedTheme, setShowMenu, setTheme }) => {
     </MenuContainer>
   );
 };
+
+export default Menu;

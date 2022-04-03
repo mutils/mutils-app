@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { encode, decode } from "html-entities";
-import TextArea from "Components/TextArea";
-import { Button } from "Components/Button";
+import { Button, TextArea } from "Components/Atoms";
 
 const HtmlContainer = styled.div`
   display: flex;

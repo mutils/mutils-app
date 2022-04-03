@@ -20,10 +20,12 @@ const InnerPanel = styled.div`
   color: ${({ theme }) => theme.text.color.primary};
 `;
 
-export const ToolPanel: FC = ({ children }) => {
+const ToolPanel: FC = ({ children }) => {
   return (
     <OuterPanel>
       <InnerPanel>{children}</InnerPanel>
     </OuterPanel>
   );
 };
+
+export default ToolPanel;

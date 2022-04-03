@@ -23,7 +23,7 @@ interface Props {
   setSearchTerm: (term: string) => void;
 }
 
-export const SearchBar: FC<Props> = ({ setSearchTerm }) => {
+const SearchBar: FC<Props> = ({ setSearchTerm }) => {
   return (
     <TextInput
       type="text"
@@ -32,3 +32,5 @@ export const SearchBar: FC<Props> = ({ setSearchTerm }) => {
     />
   );
 };
+
+export default SearchBar;

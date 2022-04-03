@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import TextInput from "Components/TextInput";
+import { TextInput } from "Components/Atoms";
 
 const Container = styled.div`
   display: flex;

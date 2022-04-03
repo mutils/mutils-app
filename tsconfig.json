@@ -13,7 +13,7 @@
     "resolveJsonModule": true,
     "paths": {
       "*": ["node_modules/*"],
-      "Components/*": ["src/Components/*"]
+      "Components/*": ["src/Components/*"],
     }
   },
   "include": ["src/**/*"]

@@ -4,7 +4,7 @@ interface Props {
   selected?: boolean;
 }
 
-export const Button = styled.button<Props>`
+export default styled.button<Props>`
   border-radius: ${({ theme }) => theme.borderRadius};
   background: ${({ theme, selected }) =>
     selected ? "rgba(255, 255, 255, 0.1)" : "none"};

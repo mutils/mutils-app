@@ -1,11 +1,7 @@
 import React, { FC, useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 
-import { SideBar } from "Components/SideBar";
-import { ToolPanel } from "Components/ToolPanel";
-import { Header } from "Components/Header";
-import { LeftMenu } from "Components/LeftMenu";
-import { Menu } from "Components/Menu";
+import { SideBar, ToolPanel, Header, LeftMenu, Menu } from "Components/index";
 import {
   Base64,
   CaseConverter,
@@ -65,7 +61,7 @@ const ToolSwitch: FC<ToolSwitchProps> = ({ selectedTool }) => {
 };
 
 export const Main = () => {
-  const [theme, setTheme] = useState<string>("gruvbox");
+  const [theme, setTheme] = useState<string>("Default");
   const [selectedTool, setSelectedTool] = useState<SelectedTool>(
     SelectedTool.NONE
   );

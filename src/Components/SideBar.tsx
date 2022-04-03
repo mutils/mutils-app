@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import {
   faArrowsLeftRight,
@@ -8,8 +8,8 @@ import {
   IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { Button } from "./Button";
-import { DropDownMenu } from "./DropDownMenu";
+import { Button } from "./Atoms";
+import { DropDownMenu } from ".";
 import { SelectedTool } from "../Views/SelectedTool";
 
 const SideBarContainer = styled.nav`
@@ -97,7 +97,7 @@ const sideBarItems: SideBarItems = {
   },
 };
 
-export const SideBar: FC<SideBarProps> = ({
+const SideBar: FC<SideBarProps> = ({
   selectedTool,
   onSelect,
   searchTerm = "",
@@ -139,3 +139,5 @@ export const SideBar: FC<SideBarProps> = ({
     </SideBarContainer>
   );
 };
+
+export default SideBar;
