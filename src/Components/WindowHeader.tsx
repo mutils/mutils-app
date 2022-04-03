@@ -14,26 +14,19 @@ const ButtonSection = styled.div`
   align-items: center;
 `;
 
-const HeaderStyled = styled.div`
-  display: flex;
-  background: ${({ theme }) => theme.background.primary};
-  padding: 10px;
-  grid-area: right-header;
-`;
-
 interface Props {}
 
-const Header: FC<Props> = () => {
+const WindowHeader: FC<Props> = () => {
   return (
-    <HeaderStyled>
+    <div id="window-header">
       <DragableArea />
       <ButtonSection>
         <WindowButton buttonType="minimise" />
         <WindowButton buttonType="maximise" />
         <WindowButton buttonType="close" />
       </ButtonSection>
-    </HeaderStyled>
+    </div>
   );
 };
 
-export default Header;
+export default WindowHeader;

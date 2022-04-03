@@ -1,5 +1,5 @@
 import DropDownMenu from "./DropDownMenu";
-import Header from "./Header";
+import WindowHeader from "./WindowHeader";
 import LeftMenu from "./LeftMenu";
 import Menu from "./Menu";
 import SearchBar from "./SearchBar";
@@ -11,7 +11,7 @@ import UnderConstruction from "./UnderConstruction";
 
 export {
   DropDownMenu,
-  Header,
+  WindowHeader,
   LeftMenu,
   Menu,
   SearchBar,

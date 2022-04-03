@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import styled from "styled-components";
 import {
   faArrowsLeftRight,
   faBarcode,
@@ -8,24 +7,9 @@ import {
   IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { Button, DropDownListItem } from "./Atoms";
+import { DropDownListItem } from "./Atoms";
 import { DropDownMenu } from ".";
 import { SelectedTool } from "../Views/SelectedTool";
-
-const SideBarContainer = styled.nav`
-  background: ${({ theme }) => theme.background.primary};
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  padding-top: 0;
-  grid-area: side-bar;
-
-  overflow-y: auto;
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
-`;
 
 interface SideBarProps {
   selectedTool: SelectedTool;
@@ -103,7 +87,7 @@ const SideBar: FC<SideBarProps> = ({
   searchTerm = "",
 }) => {
   return (
-    <SideBarContainer>
+    <nav id="side-bar">
       {Object.keys(sideBarItems).map((sectionKey) => {
         const { icon, tools } = sideBarItems[sectionKey];
         return (
@@ -136,7 +120,7 @@ const SideBar: FC<SideBarProps> = ({
           </DropDownMenu>
         );
       })}
-    </SideBarContainer>
+    </nav>
   );
 };
 

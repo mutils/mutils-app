@@ -5,14 +5,6 @@ import styled from "styled-components";
 import { DropDownListItem } from "Components/Atoms";
 import { DropDownMenu } from ".";
 
-const MenuContainer = styled.div`
-  background: ${({ theme }) => theme.background.primary};
-  color: ${({ theme }) => theme.text.color.primary};
-  display: flex;
-  flex-direction: column;
-  grid-area: side-bar;
-`;
-
 const MenuItems = styled.div`
   display: flex;
   flex-direction: column;
@@ -28,7 +20,7 @@ interface Props {
 
 const Menu: FC<Props> = ({ selectedTheme, setShowMenu, setTheme }) => {
   return (
-    <MenuContainer>
+    <div id="system-menu">
       <MenuItems>
         <DropDownMenu text="Themes (experimental)" icon={faPalette}>
           {Object.keys(themes).map((theme) => {
@@ -43,7 +35,7 @@ const Menu: FC<Props> = ({ selectedTheme, setShowMenu, setTheme }) => {
           })}
         </DropDownMenu>
       </MenuItems>
-    </MenuContainer>
+    </div>
   );
 };
 

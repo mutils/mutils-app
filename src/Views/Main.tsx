@@ -1,7 +1,13 @@
 import React, { FC, useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 
-import { SideBar, ToolPanel, Header, LeftMenu, Menu } from "Components/index";
+import {
+  SideBar,
+  ToolPanel,
+  WindowHeader,
+  LeftMenu,
+  Menu,
+} from "Components/index";
 import {
   Base64,
   CaseConverter,
@@ -76,7 +82,7 @@ export const Main = () => {
           setShowMenu={setShowMenu}
           setSearchTerm={setSearchTerm}
         />
-        <Header />
+        <WindowHeader />
         {showMenu ? (
           <Menu
             setShowMenu={setShowMenu}

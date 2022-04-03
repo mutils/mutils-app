@@ -5,13 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MenuButton } from "Components/Atoms";
 import { SearchBar } from ".";
 
-const Container = styled.div`
-  background: ${({ theme }) => theme.background.primary};
-  display: flex;
-  align-items: center;
-  grid-area: left-header;
-`;
-
 const ButtonSection = styled.div`
   display: flex;
   flex-direction: row;
@@ -26,16 +19,14 @@ interface Props {
 
 const LeftMenu: FC<Props> = ({ showMenu, setShowMenu, setSearchTerm }) => {
   return (
-    <>
-      <Container>
-        <ButtonSection>
-          <MenuButton onClick={() => setShowMenu(!showMenu)}>
-            <FontAwesomeIcon icon={showMenu ? faClose : faBars} />
-          </MenuButton>
-          <SearchBar setSearchTerm={setSearchTerm} />
-        </ButtonSection>
-      </Container>
-    </>
+    <div id="left-menu">
+      <ButtonSection>
+        <MenuButton onClick={() => setShowMenu(!showMenu)}>
+          <FontAwesomeIcon icon={showMenu ? faClose : faBars} />
+        </MenuButton>
+        <SearchBar setSearchTerm={setSearchTerm} />
+      </ButtonSection>
+    </div>
   );
 };
 
