@@ -28,6 +28,14 @@ const light: DefaultTheme = {
     closeColor: "white",
     spacing: "2px",
   },
+  textarea: {
+    background: "",
+    color: "",
+    borderRadius: "",
+    border: "",
+    padding: "",
+    fontSize: "",
+  },
 };
 
 export default light;

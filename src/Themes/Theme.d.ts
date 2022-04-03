@@ -28,6 +28,18 @@ declare interface Theme {
     closeColor: string;
     spacing: string;
   };
+  textarea: {
+    background?: string;
+    color?: string;
+    borderRadius?: string;
+    border?: string;
+    borderColor?: string;
+    borderStyle?: string;
+    borderWidth?: string;
+    padding?: string;
+    fontSize?: string;
+    boxShadow?: string;
+  };
 }
 
 declare module "styled-components" {

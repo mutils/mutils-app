@@ -28,6 +28,14 @@ const gruvbox: DefaultTheme = {
     closeColor: "#B85651",
     spacing: "5px",
   },
+  textarea: {
+    background: "",
+    color: "",
+    borderRadius: "",
+    border: "",
+    padding: "",
+    fontSize: "",
+  },
 };
 
 export default gruvbox;

@@ -6,7 +6,8 @@ interface Props {
 
 export default styled.button<Props>`
   border-radius: ${({ theme }) => theme.borderRadius};
-  background: ${({ theme, selected }) => theme.button.primary};
+  background: ${({ theme, selected }) =>
+    selected ? "rgba(255, 255, 255, 0.1)" : "none"};
   color: ${({ theme }) => theme.text.color.primary};
   padding: 10px;
   border: none;
@@ -15,6 +16,7 @@ export default styled.button<Props>`
   font-size: 1rem;
   display: flex;
   align-items: start;
+  width: 100%;
   user-select: none;
 
   :hover {

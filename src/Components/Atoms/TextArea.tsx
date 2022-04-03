@@ -5,13 +5,18 @@ interface Props {
 }
 
 export default styled.textarea<Props>`
-  background: ${({ theme }) => theme.button.primary};
-  color: ${({ theme }) => theme.text.color.primary};
-  border-radius: ${({ theme }) => theme.borderRadius};
-  display: flex;
-  border: none;
-  font-size: 1rem;
-  padding: 10px;
+  ${({ theme: { textarea } }) => `
+    background: ${textarea.background};
+    color: ${textarea.color};
+    border-radius: ${textarea.borderRadius};
+    border: ${textarea.border};
+    border-color: ${textarea.borderColor};
+    border-style: ${textarea.borderStyle};
+    border-width: ${textarea.borderWidth};
+    padding: ${textarea.padding};
+    font-size: ${textarea.fontSize};
+    box-shadow: ${textarea.boxShadow};
+  `}
 
   ${({ fullWidth }) => {
     if (fullWidth) {

@@ -8,7 +8,7 @@ import {
   IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { Button } from "./Atoms";
+import { Button, DropDownListItem } from "./Atoms";
 import { DropDownMenu } from ".";
 import { SelectedTool } from "../Views/SelectedTool";
 
@@ -124,13 +124,13 @@ const SideBar: FC<SideBarProps> = ({
               .map((toolKey) => {
                 const { toolCode } = tools[toolKey];
                 return (
-                  <Button
+                  <DropDownListItem
                     key={toolKey}
                     onClick={() => onSelect(toolCode)}
                     selected={selectedTool === toolCode}
                   >
                     {toolKey}
-                  </Button>
+                  </DropDownListItem>
                 );
               })}
           </DropDownMenu>

@@ -28,6 +28,14 @@ const horizon: DefaultTheme = {
     closeColor: "#e95378",
     spacing: "2px",
   },
+  textarea: {
+    background: "",
+    color: "",
+    borderRadius: "",
+    border: "",
+    padding: "",
+    fontSize: "",
+  },
 };
 
 export default horizon;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { TextInput } from "Components/Atoms";
+import TextBoxWithCopyButton from "Components/TextBoxWithCopyButton";
 
 const Container = styled.div`
   display: flex;
@@ -14,7 +15,7 @@ export const Url = () => {
   return (
     <Container>
       <TextInput type="text" onChange={(ev) => setInput(ev.target.value)} />
-      <TextInput type="text" value={encodeURI(input)} />
+      <TextBoxWithCopyButton value={encodeURI(input)} />
     </Container>
   );
 };

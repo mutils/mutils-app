@@ -28,6 +28,17 @@ const Default: DefaultTheme = {
     closeColor: "transparent",
     spacing: "2px",
   },
+  textarea: {
+    background: "black",
+    color: "white",
+    borderRadius: "4px",
+    border: "0.5px solid grey, 0.5px solid grey",
+    borderColor: "grey",
+    borderStyle: "solid",
+    borderWidth: "0px 0px 2px 0px",
+    padding: "",
+    fontSize: "1rem",
+  },
 };
 
 export default Default;

@@ -1,20 +1,13 @@
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { FC } from "react";
-import styled from "styled-components";
-import { TextInput } from "./Atoms";
-
-const CopyButton = styled(FontAwesomeIcon)`
-  background: ${({ theme }) => theme.button.primary};
-  border-radius: ${({ theme }) => theme.borderRadius};
-  padding: 12px;
-  font-size: 1rem;
-  margin-left: 5px;
-`;
+import React, { FC, useState } from "react";
+import styled, { keyframes } from "styled-components";
+import { TextInput, CopyButton } from "./Atoms";
 
 const Container = styled.div`
   display: flex;
   margin-top: 5px;
+  grid-gap: 5px;
 `;
 
 interface Props {
@@ -25,10 +18,7 @@ const TextBoxWithCopyButton: FC<Props> = ({ value }) => {
   return (
     <Container>
       <TextInput type="text" value={value} fullWidth />
-      <CopyButton
-        icon={faCopy}
-        onClick={() => navigator.clipboard.writeText(value)}
-      />
+      <CopyButton valueToCopy={value} />
     </Container>
   );
 };

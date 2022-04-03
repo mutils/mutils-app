@@ -28,6 +28,14 @@ const dark: DefaultTheme = {
     closeColor: "transparent",
     spacing: "2px",
   },
+  textarea: {
+    background: "",
+    color: "",
+    borderRadius: "",
+    border: "",
+    padding: "",
+    fontSize: "",
+  },
 };
 
 export default dark;
