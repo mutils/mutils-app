@@ -9,10 +9,6 @@ const HtmlContainer = styled.div`
   grid-gap: 10px;
 `;
 
-const Input = styled(TextArea)``;
-
-const Output = styled(TextArea)``;
-
 export const Html = () => {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
@@ -25,14 +21,19 @@ export const Html = () => {
   return (
     <>
       <HtmlContainer>
-        <Input
+        <TextArea
           rows={20}
           fullWidth
           style={{ resize: "none" }}
           onChange={(ev) => setInput(ev.target.value)}
           value={input}
         />
-        <Output fullWidth rows={20} style={{ resize: "none" }} value={output} />
+        <TextArea
+          fullWidth
+          rows={20}
+          style={{ resize: "none" }}
+          value={output}
+        />
       </HtmlContainer>
       <br />
       <Button
