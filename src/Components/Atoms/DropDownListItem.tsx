@@ -1,10 +1,12 @@
+import React, { FC } from "react";
+
 import styled from "styled-components";
 
 interface Props {
   selected?: boolean;
 }
 
-export default styled.button<Props>`
+const Styled = styled.button<Props>`
   border-radius: ${({ theme }) => theme.borderRadius};
   background: ${({ theme, selected }) =>
     selected ? "rgba(255, 255, 255, 0.1)" : "none"};
@@ -23,3 +25,16 @@ export default styled.button<Props>`
     background: rgba(255, 255, 255, 0.1);
   }
 `;
+
+const DropDownListItem: FC<React.ButtonHTMLAttributes<HTMLButtonElement> & Props> = ({
+  children,
+  ...restProps
+}) => {
+  return (
+    <Styled className="drop-down-list-item" {...restProps}>
+      {children}
+    </Styled>
+  );
+};
+
+export default DropDownListItem;

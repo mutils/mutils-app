@@ -35,7 +35,7 @@ const DropDownButton: FC<DropDownButtonProps> = ({
   onClick,
 }) => {
   return (
-    <DropDownButtonStyled onClick={onClick}>
+    <DropDownButtonStyled className="drop-down-button" onClick={onClick}>
       <div>
         <FontAwesomeIcon icon={icon} style={{ marginRight: "10px" }} />
         {text}

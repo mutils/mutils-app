@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import React, { FC } from "react";
+import styled from "styled-components";
 
-export default styled.button`
+const Styled = styled.button`
   border: none;
   background: none;
   width: 20px;
@@ -12,3 +13,16 @@ export default styled.button`
   cursor: pointer;
   color: ${({ theme }) => theme.text.color.primary};
 `;
+
+const MenuButton: FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({
+  children,
+  ...restProps
+}) => {
+  return (
+    <Styled className="button" {...restProps}>
+      {children}
+    </Styled>
+  );
+};
+
+export default MenuButton;

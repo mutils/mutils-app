@@ -10,5 +10,5 @@ const NumberInput = styled.input`
 `;
 
 export default ({ ...args }) => {
-  return <NumberInput {...args} type="number" />;
+  return <NumberInput className="number-input" {...args} type="number" />;
 };

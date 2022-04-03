@@ -45,6 +45,7 @@ const CopyButton: FC<Props> = ({ valueToCopy }) => {
   const [clicked, setClicked] = useState(false);
   return (
     <CopyButtonStyled
+      className="copy-button"
       icon={faCopy}
       clicked={clicked}
       onClick={() => {

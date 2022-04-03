@@ -1,10 +1,11 @@
+import React, { FC } from "react";
 import styled from "styled-components";
 
 interface Props {
   fullWidth?: boolean;
 }
 
-export default styled.textarea<Props>`
+const Styled = styled.textarea<Props>`
   ${({ theme: { textarea } }) => `
     background: ${textarea.background};
     color: ${textarea.color};
@@ -32,3 +33,16 @@ export default styled.textarea<Props>`
     display: none;
   }
 `;
+
+const TextArea: FC<React.TextareaHTMLAttributes<HTMLTextAreaElement> & Props> = ({
+  children,
+  ...restProps
+}) => {
+  return (
+    <Styled className="button" {...restProps}>
+      {children}
+    </Styled>
+  );
+};
+
+export default TextArea;

@@ -71,6 +71,7 @@ const WindowButton: FC<Props> = ({ buttonType }) => {
   const theme = useTheme();
   return (
     <BaseButton
+      className="window-button"
       buttonType={buttonType}
       onClick={() => window.dispatchEvent(new Event(eventNameMap[buttonType]))}
     >

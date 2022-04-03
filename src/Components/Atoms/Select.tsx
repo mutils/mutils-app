@@ -1,6 +1,7 @@
+import React, { FC } from "react";
 import styled from "styled-components";
 
-export default styled.select`
+const Styled = styled.select`
   background: ${({ theme }) => theme.button.primary};
   color: ${({ theme }) => theme.text.color.primary};
   border-radius: ${({ theme }) => theme.borderRadius};
@@ -12,3 +13,16 @@ export default styled.select`
     outline: none;
   }
 `;
+
+const Select: FC<React.SelectHTMLAttributes<HTMLSelectElement>> = ({
+  children,
+  ...restProps
+}) => {
+  return (
+    <Styled className="select" {...restProps}>
+      {children}
+    </Styled>
+  );
+};
+
+export default Select;
