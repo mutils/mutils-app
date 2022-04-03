@@ -2,10 +2,10 @@ import React, { FC, useEffect, useState } from "react";
 import styled from "styled-components";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import YAML from "yaml";
-import { Button } from "../../Components/Button";
-import ToolHeading from "../../Components/ToolHeading";
-import TextArea from "../../Components/TextArea";
-import SyntaxHighlighter from "../../Components/SyntaxHighlighter";
+import { Button } from "Components/Button";
+import ToolHeading from "Components/ToolHeading";
+import TextArea from "Components/TextArea";
+import SyntaxHighlighter from "Components/SyntaxHighlighter";
 
 const Container = styled.div`
   display: flex;

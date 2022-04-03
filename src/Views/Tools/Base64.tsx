@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import base64 from "base-64";
-import TextArea from "../../Components/TextArea";
-import { Button } from "../../Components/Button";
+import TextArea from "Components/TextArea";
+import { Button } from "Components/Button";
 
 const Container = styled.div`
   display: flex;

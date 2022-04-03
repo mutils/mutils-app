@@ -3,8 +3,8 @@ import styled from "styled-components";
 import jwtDecode from "jwt-decode";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-import TextArea from "../../Components/TextArea";
-import SyntaxHighlighter from "../../Components/SyntaxHighlighter";
+import TextArea from "Components/TextArea";
+import SyntaxHighlighter from "Components/SyntaxHighlighter";
 
 const Container = styled.div`
   display: flex;

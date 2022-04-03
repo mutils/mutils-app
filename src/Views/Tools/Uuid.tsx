@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { v1, v4, v5 } from "uuid";
 
-import Select from "../../Components/Select";
-import TextArea from "../../Components/TextArea";
-import { Button } from "../../Components/Button";
-import NumberInput from "../../Components/NumberInput";
+import Select from "Components/Select";
+import TextArea from "Components/TextArea";
+import { Button } from "Components/Button";
+import NumberInput from "Components/NumberInput";
 
 const Container = styled.div`
   display: flex;

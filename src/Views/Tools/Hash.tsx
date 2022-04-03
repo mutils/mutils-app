@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { MD5, SHA256, SHA1, SHA512 } from "crypto-js";
 
-import TextInput from "../../Components/TextInput";
-import TextArea from "../../Components/TextArea";
+import TextInput from "Components/TextInput";
+import TextArea from "Components/TextArea";
 
 const Container = styled.div`
   display: flex;

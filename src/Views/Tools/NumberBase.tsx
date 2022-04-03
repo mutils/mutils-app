@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import TextInput from "../../Components/TextInput";
-import { TextBoxWithCopyButton } from "../../Components/TextBoxWithCopyButton";
-import Select from "../../Components/Select";
-import ToolHeading from "../../Components/ToolHeading";
+import TextInput from "Components/TextInput";
+import { TextBoxWithCopyButton } from "Components/TextBoxWithCopyButton";
+import Select from "Components/Select";
+import ToolHeading from "Components/ToolHeading";
 
 export const NumberBase = () => {
   const [value, setValue] = useState("");

@@ -1,9 +1,11 @@
 import React, { FC, useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 
-import { SideBar } from "../Components/SideBar";
-import { ToolPanel } from "../Components/ToolPanel";
-import { Header } from "../Components/Header";
+import { SideBar } from "Components/SideBar";
+import { ToolPanel } from "Components/ToolPanel";
+import { Header } from "Components/Header";
+import { LeftMenu } from "Components/LeftMenu";
+import { Menu } from "Components/Menu";
 import {
   Base64,
   CaseConverter,
@@ -19,8 +21,6 @@ import {
 import { ToolsOverview } from "./ToolsOverview";
 import { SelectedTool } from "./SelectedTool";
 import themes from "../Themes";
-import { LeftMenu } from "../Components/LeftMenu";
-import { Menu } from "../Components/Menu";
 
 const Container = styled.div`
   display: grid;
