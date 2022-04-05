@@ -26,19 +26,35 @@
  * ```
  */
 
-import './default.css';
-import './index.css';
-import './App';
+import "./default.css";
+import "./index.css";
+import { render } from "./App";
+
+let styleSheet = "";
+
+// (window as any).electron.handle(
+//   "stylesheet-loaded",
+//   (event: any, data: any) => {
+//     console.log(event);
+//     console.log(data);
+//     console.log("Something happened");
+//   }
+// );
+
+(window as any).electron.handleLoadStyleSheet(
+  (fluff: any, userStyleSheet: string) => render(userStyleSheet)
+);
 
 window.addEventListener("app-close", () => {
-    (window as any).electron.send("app-close");
+  (window as any).electron.send("app-close");
 });
 
 window.addEventListener("app-minimise", () => {
-    (window as any).electron.send("app-minimise");
+  (window as any).electron.send("app-minimise");
 });
 
 window.addEventListener("app-maximise", () => {
-    (window as any).electron.send("app-maximise");
+  (window as any).electron.send("app-maximise");
 });
 
+render(styleSheet);

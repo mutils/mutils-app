@@ -66,7 +66,11 @@ const ToolSwitch: FC<ToolSwitchProps> = ({ selectedTool }) => {
   }
 };
 
-export const Main = () => {
+interface Props {
+  styleSheet: string;
+}
+
+export const Main: FC<Props> = ({ styleSheet }) => {
   const [theme, setTheme] = useState<string>("Default");
   const [selectedTool, setSelectedTool] = useState<SelectedTool>(
     SelectedTool.NONE
@@ -76,6 +80,7 @@ export const Main = () => {
 
   return (
     <ThemeProvider theme={themes[theme]}>
+      <style>{styleSheet}</style>
       <Container>
         <LeftMenu
           showMenu={showMenu}

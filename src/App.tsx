@@ -1,10 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { Main } from './Views/Main';
+import { Main } from "./Views/Main";
 
-function render() {
-  ReactDOM.render(<Main />, document.body);
+export function render(styleSheet: string) {
+  ReactDOM.render(<Main styleSheet={styleSheet} />, document.body);
 }
-
-render();
